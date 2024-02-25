@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.idea
+mini-progect-1-react-ts.iml
+package-lock.json
