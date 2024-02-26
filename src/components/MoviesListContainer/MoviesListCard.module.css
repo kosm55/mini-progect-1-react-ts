@@ -1,0 +1,19 @@
+.MoviesListCard{
+    width: 250px;
+    height: 350px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    margin: 10px;
+    cursor: pointer;
+    border: 1px solid black;
+
+}
+.MoviesListCard img{
+    width: 200px;
+    height: 300px;
+}
+.MoviesListCard h3{
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}

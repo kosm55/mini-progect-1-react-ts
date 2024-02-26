@@ -1,0 +1,34 @@
+
+.MovieInfoMain{
+    display: flex;
+    padding: 50px;
+    font-family: sans-serif;
+}
+.MovieInfo{
+    text-align: center;
+}
+
+.MovieInfoMain img{
+    width: 400px;
+    height: 550px;
+}
+.MovieInfoMain h1{
+
+}
+.MovieInfoMain p{
+    font-style: italic;
+    text-align: justify;
+    padding: 10% 20% 0 20%;
+}
+
+button{
+    width: 80px;
+    height: 30px;
+    margin-left: 50px;
+    color: snow;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: teal;
+    border: none;
+    border-radius: 3px;
+}

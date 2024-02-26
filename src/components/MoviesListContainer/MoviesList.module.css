@@ -1,0 +1,17 @@
+
+.MoviesListMain{
+
+    text-align: center;
+
+}
+
+.MoviesList{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    padding-left: 13%
+
+
+
+}

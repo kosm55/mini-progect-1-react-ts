@@ -1,0 +1,7 @@
+const ganreService={
+
+}
+
+export {
+    ganreService
+}
