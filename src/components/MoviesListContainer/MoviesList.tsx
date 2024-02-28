@@ -2,36 +2,36 @@ import {FC, useEffect, useState} from 'react';
 import {useSearchParams} from "react-router-dom";
 
 import {IMovie} from "../../interfaces";
-import {movieService} from "../../services/movieService";
+import {movieService} from "../../services";
 import {MoviesListCard} from "./MoviesListCard";
 import css from "./MoviesList.module.css"
 
 
 interface IProps{
     results: IMovie[]
-    page: string
-    total_pages: number
+    // page: string
+    // total_pages: number
 }
 const MoviesList: FC = () => {
-    const [movies, setMovies] = useState<IProps>( {page: '0', results: [], total_pages: 12})
+    const [movies, setMovies] = useState<IProps>( {results: []} )
     const [query, setQuery] = useSearchParams({page: '1'});
-    const [currentPage, setCurrentPage] = useState(1)
-    const [totalPage, setTotalPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState <number>(1)
+    const [totalPage, setTotalPage] = useState<number>(1)
 
 
     useEffect(() => {
         movieService.getAll().then(({data}) => {
             return setMovies(data);
-
         })
     }, []);
 
-
     const nextPage=()=>{
+        setCurrentPage(prevState => prevState+1)
 
     }
 
     const prevPage=()=>{
+        setCurrentPage(prevState => prevState-1)
     }
 
 
@@ -44,7 +44,7 @@ const MoviesList: FC = () => {
                 <button onClick={nextPage}>next</button>
             </div>
             <div className={css.MoviesList}>
-                {movies.results.map(movie=> <MoviesListCard key={movie.id} movie={movie}/>)}
+                {movies.results.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
             </div>
 
 

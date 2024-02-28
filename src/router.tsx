@@ -1,8 +1,8 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
-import {MainLayout} from "./layouts/MainLayout";
-import {AuthLayout} from "./layouts";
+
+import {AuthLayout, MainLayout} from "./layouts";
 import {MovieInfoPage, MoviesPage} from "./pages";
-import {MovieInfo} from "./components/MoviesListContainer";
+
 
 const router = createBrowserRouter([
     {

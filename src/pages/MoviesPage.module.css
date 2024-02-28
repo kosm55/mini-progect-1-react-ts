@@ -1,0 +1,14 @@
+/*.Genres{*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    width: 80%;*/
+/*    padding-left: 13%;*/
+/*    height: 100px;*/
+/*}*/
+
+.darkPage{
+    background: black;
+}
+.whitePage{
+    background: snow;
+}

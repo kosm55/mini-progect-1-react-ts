@@ -1,19 +1,28 @@
-import {FC, PropsWithChildren} from 'react';
-import {MoviesList} from "../components/MoviesListContainer";
 import {Outlet} from "react-router-dom";
 
-interface IProps extends PropsWithChildren {
+import {Genres, MoviesList} from "../components";
+import {useContext} from "react";
+import {DarkModeContext} from "../hoc/ContextProvider";
+import css from "./MoviesPage.module.css"
 
-}
 
-const MoviesPage: FC<IProps> = () => {
+const MoviesPage = () => {
+    const darkModeContext = useContext(DarkModeContext);
+
+    if (!darkModeContext) {
+        return null;
+    }
+
+    const { darkMode, setDarkMode } = darkModeContext;
 
     return (
-        <div>
+        <div className={darkMode? css.darkPage: css.whitePage}>
+            <Genres/>
             <MoviesList/>
-            <Outlet/>
+            <Outlet />
         </div>
     );
 };
 
 export {MoviesPage};
+

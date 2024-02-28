@@ -11,7 +11,7 @@ const urls={
     },
     genres: {
         base: genres,
-        byId: (genre_id: number):string=> ``
+        byId: (genre_id: number):string=> `/genre/${genre_id}`
 
     }
 }

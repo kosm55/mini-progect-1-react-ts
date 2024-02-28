@@ -9,7 +9,7 @@ const Stars: FC<IProps> = ({ vote_average }) => {
         <div>
             <StarRating
                 rating={vote_average}
-                starRatedColor="yellow"
+                starRatedColor="orange"
                 numberOfStars={10}
                 starDimension='15px'
                 starSpacing='0'

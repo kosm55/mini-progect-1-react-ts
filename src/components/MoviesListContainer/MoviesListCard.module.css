@@ -1,11 +1,12 @@
 .MoviesListCard{
     width: 250px;
-    height: 350px;
+    height: 380px;
     text-align: center;
     padding: 10px 0 10px 0;
     margin: 10px;
     cursor: pointer;
-    border: 1px solid black;
+    border-radius: 5px;
+    background: teal;
 
 }
 .MoviesListCard img{

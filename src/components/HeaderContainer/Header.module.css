@@ -5,6 +5,7 @@
     background-color: teal;
     height: 50px;
 }
+
 .Header a{
     text-decoration: none;
     color: snow;
@@ -12,5 +13,40 @@
     margin: 0 5px;
 }
 .Header a[class='active'] {
-    color: red;
+    color: snow;
+}
+.Header a:hover{
+    color: snow;
+}
+.btn{
+    border-radius: 50px;
+    border: 2px solid black;
+    background: black;
+    color: snow;
+}
+/*----dark-------*/
+.HeaderDark{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: teal;
+    height: 50px;
+}
+.HeaderDark a{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    margin: 0 5px;
+}
+.HeaderDark a[class='active'] {
+    color: #c21717;
+}
+.HeaderDark a:hover{
+    color: #bd1818;
+}
+.btnDark{
+    border-radius: 50px;
+    border: 2px solid black;
+    background: snow;
+    color: black;
 }

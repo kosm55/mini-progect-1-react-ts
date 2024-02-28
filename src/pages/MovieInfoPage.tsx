@@ -3,8 +3,8 @@ import {useParams} from "react-router-dom";
 
 import {useAppLocation} from "../hooks";
 import {IMovie} from "../interfaces";
-import {movieService} from "../services/movieService";
-import {MovieInfo} from "../components/MoviesListContainer";
+import {MovieInfo} from "../components";
+import {movieService} from "../services";
 
 interface IProps extends PropsWithChildren {
 
@@ -25,7 +25,6 @@ const MovieInfoPage: FC<IProps> = () => {
             }
         }
     }, [id, state]);
-    console.log(movieInfo)
 
     return (
         <div>

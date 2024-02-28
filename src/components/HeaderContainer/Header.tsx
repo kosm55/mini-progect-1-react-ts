@@ -1,17 +1,29 @@
-import {FC, PropsWithChildren} from 'react';
+import {useContext} from 'react';
 import {NavLink} from "react-router-dom";
 
 import css from "./Header.module.css"
+import {SearchMovieForm} from "../MoviesListContainer";
 
-interface IProps extends PropsWithChildren {
+import {DarkModeContext} from "../../hoc/ContextProvider";
 
-}
 
-const Header: FC<IProps> = () => {
+const Header = () => {
+    const darkModeContext = useContext(DarkModeContext);
+
+    if (!darkModeContext) {
+        return null;
+    }
+
+    const { darkMode, setDarkMode } = darkModeContext;
+    const switchDarkMode= ()=>{
+        setDarkMode(prevMode=> !prevMode)
+    }
     return (
-        <div className={css.Header}>
+        <div className={darkMode? css.HeaderDark: css.Header}>
             <NavLink to={'movies'}>Movies</NavLink>
+            <SearchMovieForm/>
             <NavLink to={'login'}>Login</NavLink>
+            <button className={darkMode?css.btnDark : css.btn} onClick={switchDarkMode}>{darkMode ? 'on' : 'off'}</button>
         </div>
     );
 };

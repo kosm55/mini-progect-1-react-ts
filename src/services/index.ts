@@ -1,2 +1,3 @@
 export * from "./apiService"
-export * from "./ganreService"
+export * from "./genreService"
+export * from "./movieService"
