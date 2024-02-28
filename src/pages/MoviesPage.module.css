@@ -7,8 +7,10 @@
 /*}*/
 
 .darkPage{
+    margin-top: 20px;
     background: black;
 }
 .whitePage{
+    margin-top: 20px;
     background: snow;
 }

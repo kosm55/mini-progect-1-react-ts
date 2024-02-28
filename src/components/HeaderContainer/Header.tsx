@@ -2,8 +2,6 @@ import {useContext} from 'react';
 import {NavLink} from "react-router-dom";
 
 import css from "./Header.module.css"
-import {SearchMovieForm} from "../MoviesListContainer";
-
 import {DarkModeContext} from "../../hoc/ContextProvider";
 
 
@@ -21,8 +19,7 @@ const Header = () => {
     return (
         <div className={darkMode? css.HeaderDark: css.Header}>
             <NavLink to={'movies'}>Movies</NavLink>
-            <SearchMovieForm/>
-            <NavLink to={'login'}>Login</NavLink>
+            <NavLink to={'login'}>Your account</NavLink>
             <button className={darkMode?css.btnDark : css.btn} onClick={switchDarkMode}>{darkMode ? 'on' : 'off'}</button>
         </div>
     );

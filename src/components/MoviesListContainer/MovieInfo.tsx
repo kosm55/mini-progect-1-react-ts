@@ -4,14 +4,22 @@ import {IMovie} from "../../interfaces";
 import {Stars} from "../StarsRatingContainer";
 import css from "./MovieInfo.module.css"
 import {useNavigate} from "react-router-dom";
+import {GenreBadge} from "../GenreContainer";
+import {IGenre} from "../../interfaces/genreInterface";
+
+
+
 
 interface IProps extends PropsWithChildren {
-    movieInfo: IMovie
+    movieInfo: IMovie,
+
 }
 
 const MovieInfo: FC<IProps> = ({movieInfo}) => {
     const {id,genre_ids,  poster_path,  original_title, title , overview, popularity, release_date, vote_count, vote_average} = movieInfo;
     const navigate = useNavigate();
+
+
 
     return (
         <div>
@@ -23,7 +31,10 @@ const MovieInfo: FC<IProps> = ({movieInfo}) => {
                     <h4>({original_title})</h4>
                     <Stars vote_average={vote_average}/>
                     <div>rating from users: {vote_average} ({vote_count} voices)</div>
-                    <div>genre_ids: {genre_ids.join(',')}</div>
+
+
+                    <div>genre_ids:{genre_ids.map((genreId, index)=><GenreBadge key={index} genre={{id:genreId, name: ''}}/>)}</div>
+
                     <p>{overview}</p>
                 </div>
 

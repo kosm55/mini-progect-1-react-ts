@@ -6,7 +6,8 @@ import {Stars} from "../StarsRatingContainer";
 import css from "./MoviesListCard.module.css"
 
 interface IProps{
-    movie: IMovie
+    movie: IMovie,
+
 }
 
 const MoviesListCard: FC<IProps> = ({movie}) => {

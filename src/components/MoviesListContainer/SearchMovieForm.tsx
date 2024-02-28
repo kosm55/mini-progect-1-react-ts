@@ -1,23 +1,25 @@
 import {FC, PropsWithChildren, useState} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
 
-interface IProps extends PropsWithChildren {
+import css from "./SearchMovieForm.module.css"
 
+interface IProps extends PropsWithChildren {
+    searchTitle: (title: string) => void
 }
 
-const SearchMovieForm: FC<IProps> = () => {
+const SearchMovieForm: FC<IProps> = ({searchTitle}) => {
     const {reset,handleSubmit,register} = useForm();
-    const [searchTitle, setSearchTitle] = useState<string>('')
+
 
 
     const search: SubmitHandler<any> =(data)=>{
         console.log(data.title)
-        setSearchTitle(data.title)
+        searchTitle(data.title)
         reset()
     }
 
     return (
-        <form onSubmit={handleSubmit(search)}>
+        <form  className={css.form} onSubmit={handleSubmit(search)}>
             <input type="text" placeholder={'enter name movie..'} {...register('title')}/>
             <button>search</button>
         </form>

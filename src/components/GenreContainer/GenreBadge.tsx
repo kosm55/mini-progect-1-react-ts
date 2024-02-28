@@ -7,10 +7,10 @@ interface IProps extends PropsWithChildren {
 }
 
 const GenreBadge: FC<IProps> = ({genre}) => {
-    const {id, name} = genre;
+    const { name} = genre;
     return (
         <div>
-            <div ><span className={css.Badge}>{name}</span></div>
+            <div><span className={css.Badge}>{name}</span></div>
         </div>
     );
 };

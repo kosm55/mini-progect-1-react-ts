@@ -6,11 +6,12 @@ import {IMovie} from "../interfaces";
 import {MovieInfo} from "../components";
 import {movieService} from "../services";
 
+
 interface IProps extends PropsWithChildren {
 
 }
 
-const MovieInfoPage: FC<IProps> = () => {
+const MovieInfoPage: FC<IProps> = (genres) => {
     const {state} = useAppLocation<{ movie: IMovie}>();
     const {id} = useParams();
 

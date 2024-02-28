@@ -1,8 +1,6 @@
 
 .MoviesListMain{
-
     text-align: center;
-
 }
 
 .MoviesList{
@@ -11,7 +9,11 @@
     align-items: center;
     width: 80%;
     padding-left: 13%
-
-
-
+}
+.buttonDiv{
+    /*background: grey;*/
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    margin-left: 38%;
 }

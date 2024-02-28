@@ -1,3 +1,5 @@
+import {IGenre} from "./genreInterface";
+
 export interface IMovie{
     adult: boolean,
     backdrop_path: string,

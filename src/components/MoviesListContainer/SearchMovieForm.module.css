@@ -1,0 +1,12 @@
+.form{
+    width: 50%;
+    /*background: grey;*/
+    margin-left: 25%;
+    margin-bottom: 20px;
+}
+.form input{
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    padding-left: 10px;
+}

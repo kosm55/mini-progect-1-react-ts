@@ -4,6 +4,7 @@ const movies='/discover/movie'
 const genres='/genre/movie/list'
 const auth= '/authentication'
 
+
 const urls={
     movies: {
         base: movies,
