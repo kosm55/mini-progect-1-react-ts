@@ -7,10 +7,10 @@
 /*}*/
 
 .darkPage{
-    margin-top: 20px;
+    padding-top: 10px;
     background: black;
 }
 .whitePage{
-    margin-top: 20px;
+    padding-top: 10px;
     background: snow;
 }
