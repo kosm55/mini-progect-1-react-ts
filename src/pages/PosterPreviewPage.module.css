@@ -1,0 +1,12 @@
+.Poster{
+    display: flex;
+}
+.Poster img{
+    width: 500px;
+    height: 750px;
+    margin-left: 25%;
+
+}
+.Poster button{
+    margin-left: 20px;
+}

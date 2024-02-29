@@ -7,10 +7,20 @@
 /*}*/
 
 .darkPage{
-    margin-top: 20px;
     background: black;
+    padding-top: 10px;
 }
 .whitePage{
-    margin-top: 20px;
     background: snow;
+    padding-top: 10px;
+}
+.Genres{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    padding-left: 13%;
+    margin-top: 20px;
+    margin-bottom: -30px;
+    height: 40px;
+    position: relative;
 }

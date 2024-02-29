@@ -9,8 +9,12 @@
 }
 
 .MovieInfoMain img{
-    width: 400px;
+    width: 350px;
     height: 550px;
+}
+.MovieInfoMain img:hover{
+    border: 3px solid teal;
+    cursor: pointer ;
 }
 .MovieInfoMain h1{
 
@@ -25,10 +29,15 @@ button{
     width: 80px;
     height: 30px;
     margin-left: 50px;
+    margin-top: 10px;
     color: snow;
     font-size: 15px;
     cursor: pointer;
     background-color: teal;
     border: none;
     border-radius: 3px;
+}
+.GenreBadge{
+    margin-left: -20px;
+
 }

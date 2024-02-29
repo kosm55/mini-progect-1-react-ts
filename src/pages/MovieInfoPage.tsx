@@ -1,4 +1,4 @@
-import {FC, PropsWithChildren, useEffect, useState} from 'react';
+import React, {FC, PropsWithChildren, useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 
 import {useAppLocation} from "../hooks";
@@ -7,14 +7,15 @@ import {MovieInfo} from "../components";
 import {movieService} from "../services";
 
 
+
+
 interface IProps extends PropsWithChildren {
 
 }
 
-const MovieInfoPage: FC<IProps> = (genres) => {
+const MovieInfoPage: FC<IProps> = () => {
     const {state} = useAppLocation<{ movie: IMovie}>();
     const {id} = useParams();
-
     const [movieInfo, setMovieInfo] = useState<IMovie>()
 
     useEffect(() => {
@@ -29,7 +30,7 @@ const MovieInfoPage: FC<IProps> = (genres) => {
 
     return (
         <div>
-            {movieInfo && <MovieInfo movieInfo={movieInfo}/>}
+            {movieInfo && <MovieInfo movieInfo={movieInfo} />}
         </div>
     );
 };

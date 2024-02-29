@@ -7,7 +7,16 @@
     cursor: pointer;
     border-radius: 5px;
     background: teal;
-
+}
+.MainCard{
+    width: 250px;
+    height: 380px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: teal;
 }
 .MoviesListCard img{
     width: 200px;
@@ -17,4 +26,12 @@
     font-family: sans-serif;
     padding: 0;
     margin: 0;
+}
+.GenreBadge{
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: flex-end;*/
+    position: relative;
+    width: 100%;
+    height: 10px;
 }
