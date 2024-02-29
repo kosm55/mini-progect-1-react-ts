@@ -1,6 +1,6 @@
-import {FC, PropsWithChildren, useContext, useEffect, useState} from "react";
+import {FC, PropsWithChildren, useContext,  useState} from "react";
 
-import {GenreBadge, Genres, MoviesList, SearchMovieForm} from "../components";
+import {GenreBadge, MoviesList, SearchMovieForm} from "../components";
 import {DarkModeContext, GenreContext} from "../hoc/ContextProvider";
 import css from "./MoviesPage.module.css"
 
