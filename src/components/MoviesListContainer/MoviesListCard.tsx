@@ -1,5 +1,5 @@
-import React, {FC, useContext, useState} from 'react';
-import {useNavigate, useParams} from "react-router-dom";
+import React, {FC, useContext} from 'react';
+import {useNavigate} from "react-router-dom";
 
 import {IMovie} from "../../interfaces";
 import {Stars} from "../StarsRatingContainer";
@@ -15,7 +15,6 @@ interface IProps {
 
 const MoviesListCard: FC<IProps> = ({movie}) => {
     const {id, poster_path, title, genre_ids, vote_average} = movie;
-    // const [{id:id_genre,name}]=genres
     const genres = useContext(GenreContext)
 
     const showGenreOfMovie = (genres: IGenre[], genre_ids: number[]): React.ReactNode[] => {

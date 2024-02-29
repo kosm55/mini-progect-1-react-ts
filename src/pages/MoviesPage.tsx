@@ -1,13 +1,9 @@
-import {Outlet} from "react-router-dom";
+import {FC, PropsWithChildren, useContext, useEffect, useState} from "react";
 
 import {GenreBadge, Genres, MoviesList, SearchMovieForm} from "../components";
-import {FC, PropsWithChildren, useContext, useEffect, useState} from "react";
 import {DarkModeContext, GenreContext} from "../hoc/ContextProvider";
 import css from "./MoviesPage.module.css"
-import {SubmitHandler} from "react-hook-form";
-import {IGenre} from "../interfaces/genreInterface";
-import {genreService} from "../services";
-import {GenreSearchPage} from "./GenreSearchPage";
+
 
 interface IProps extends PropsWithChildren {
 

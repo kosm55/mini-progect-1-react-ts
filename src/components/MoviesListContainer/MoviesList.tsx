@@ -5,7 +5,7 @@ import {IMovie} from "../../interfaces";
 import {movieService} from "../../services";
 import {MoviesListCard} from "./MoviesListCard";
 import css from "./MoviesList.module.css"
-import {IGenre} from "../../interfaces/genreInterface";
+
 
 
 

@@ -1,9 +1,9 @@
 import React, {FC, PropsWithChildren, useContext} from 'react';
+import {useNavigate} from "react-router-dom";
 
 import {IMovie} from "../../interfaces";
 import {Stars} from "../StarsRatingContainer";
 import css from "./MovieInfo.module.css"
-import {Outlet, useNavigate} from "react-router-dom";
 import {GenreBadge} from "../GenreContainer";
 import {IGenre} from "../../interfaces/genreInterface";
 import {GenreContext} from "../../hoc/ContextProvider";
@@ -17,7 +17,7 @@ interface IProps extends PropsWithChildren {
 }
 
 const MovieInfo: FC<IProps> = ({movieInfo}) => {
-    const {id,genre_ids,  poster_path,  original_title, title , overview, popularity, release_date, vote_count, vote_average} = movieInfo;
+    const {genre_ids,  poster_path,  original_title, title , overview, release_date, vote_count, vote_average} = movieInfo;
     const navigate = useNavigate();
     const genresContext = useContext(GenreContext);
 
