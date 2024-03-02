@@ -1,7 +1,9 @@
 import {FC, PropsWithChildren} from 'react';
-import {IGenre} from "../../interfaces/genreInterface";
-import css from "./GenreBadge.module.css"
 import {NavLink} from "react-router-dom";
+
+import {IGenre} from "../../interfaces";
+import css from "./GenreBadge.module.css"
+
 
 interface IProps extends PropsWithChildren {
     genre: IGenre

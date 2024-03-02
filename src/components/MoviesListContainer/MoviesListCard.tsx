@@ -1,16 +1,14 @@
 import React, {FC, useContext} from 'react';
 import {useNavigate} from "react-router-dom";
 
-import {IMovie} from "../../interfaces";
+import {IMovie, IGenre} from "../../interfaces";
 import {Stars} from "../StarsRatingContainer";
 import css from "./MoviesListCard.module.css"
-import {IGenre} from "../../interfaces/genreInterface";
 import {GenreBadge} from "../GenreContainer";
 import {GenreContext} from "../../hoc/ContextProvider";
 
 interface IProps {
-    movie: IMovie,
-
+    movie: IMovie
 }
 
 const MoviesListCard: FC<IProps> = ({movie}) => {

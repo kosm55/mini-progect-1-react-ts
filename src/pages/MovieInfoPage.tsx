@@ -6,9 +6,6 @@ import {IMovie} from "../interfaces";
 import {MovieInfo} from "../components";
 import {movieService} from "../services";
 
-
-
-
 interface IProps extends PropsWithChildren {
 
 }

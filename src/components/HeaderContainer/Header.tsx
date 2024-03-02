@@ -8,12 +8,13 @@ import icon from "./icon/icons8-account-50.png"
 
 const Header = () => {
     const darkModeContext = useContext(DarkModeContext);
-
-
     const { darkMode, setDarkMode } = darkModeContext;
+
     const switchDarkMode= ()=>{
         setDarkMode(prevMode=> !prevMode)
     }
+
+
     return (
         <div className={darkMode? css.HeaderDark: css.Header}>
             <NavLink to={'movies'}>Movies</NavLink>

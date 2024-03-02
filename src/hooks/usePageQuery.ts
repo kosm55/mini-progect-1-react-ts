@@ -5,7 +5,7 @@ const usePageQuery = () => {
     const [query, setQuery] = useSearchParams();
     const [currentPage, setCurrentPage] = useState<number>(1)
     const page=query.get('page')|| '1'
-    const totalPage= query.get('total_pages')
+
 
     const nextPage = () => setQuery(prevState => {
         const nextPage = (+prevState.get('page') + 1).toString();
@@ -21,7 +21,7 @@ const usePageQuery = () => {
         prevState.set('page', prevPage);
         return prevState;
     });
-    return { page, currentPage, nextPage, prevPage, totalPage };
+    return { page, currentPage, nextPage, prevPage };
 }
 
 export {

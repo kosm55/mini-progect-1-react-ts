@@ -30,7 +30,6 @@
 .GenreBadge{
     display: flex;
     flex-wrap: wrap;
-    /*justify-content: flex-end;*/
     position: relative;
     width: 100%;
     height: 10px;

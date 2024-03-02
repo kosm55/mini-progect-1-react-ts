@@ -5,7 +5,7 @@ import {IMovie} from "../../interfaces";
 import {Stars} from "../StarsRatingContainer";
 import css from "./MovieInfo.module.css"
 import {GenreBadge} from "../GenreContainer";
-import {IGenre} from "../../interfaces/genreInterface";
+import {IGenre} from "../../interfaces";
 import {GenreContext} from "../../hoc/ContextProvider";
 
 
@@ -50,7 +50,6 @@ const MovieInfo: FC<IProps> = ({movieInfo}) => {
                 </div>
 
             </div>
-            {/*<Outlet/>*/}
         </div>
 
     );
