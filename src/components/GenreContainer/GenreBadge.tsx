@@ -8,10 +8,10 @@ interface IProps extends PropsWithChildren {
 }
 
 const GenreBadge: FC<IProps> = ({genre}) => {
-    const { name} = genre;
+    const { id,name} = genre;
     return (
         <div>
-            <NavLink to={`/movies/genre/${name}`}><span className={css.Badge}>{name}</span></NavLink>
+            <NavLink to={`/movies/genre/${id}`}><span className={css.Badge}>{name}</span></NavLink>
         </div>
     );
 };

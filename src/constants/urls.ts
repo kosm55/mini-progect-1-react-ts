@@ -2,6 +2,7 @@ const baseURL='https://api.themoviedb.org/3'
 
 const movies='/discover/movie'
 const genres='/genre/movie/list'
+// const search= '/search/movie'
 const auth= '/authentication'
 
 
@@ -13,8 +14,11 @@ const urls={
     genres: {
         base: genres,
         byId: (genre_id: number):string=> `/genre/${genre_id}`
-
-    }
+    },
+    // search: {
+    //     base: search,
+    //     byTitle: (title: string): string=> `/search/movie/${title}`
+    // }
 }
 
 

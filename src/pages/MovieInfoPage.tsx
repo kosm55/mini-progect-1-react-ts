@@ -16,7 +16,7 @@ interface IProps extends PropsWithChildren {
 const MovieInfoPage: FC<IProps> = () => {
     const {state} = useAppLocation<{ movie: IMovie}>();
     const {id} = useParams();
-    const [movieInfo, setMovieInfo] = useState<IMovie>()
+    const [movieInfo, setMovieInfo] = useState<IMovie|undefined>()
 
     useEffect(() => {
         if (state?.movie){

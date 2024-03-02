@@ -1,5 +1,5 @@
 import React, {FC, PropsWithChildren, useContext} from 'react';
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 import {IMovie} from "../../interfaces";
 import {Stars} from "../StarsRatingContainer";
@@ -17,9 +17,10 @@ interface IProps extends PropsWithChildren {
 }
 
 const MovieInfo: FC<IProps> = ({movieInfo}) => {
-    const {genre_ids,  poster_path,  original_title, title , overview, release_date, vote_count, vote_average} = movieInfo;
+    const {genre_ids, backdrop_path, poster_path,  original_title, title , overview, release_date, vote_count, vote_average} = movieInfo;
     const navigate = useNavigate();
     const genresContext = useContext(GenreContext);
+    const {id} = useParams();
 
 
 
@@ -32,9 +33,9 @@ const MovieInfo: FC<IProps> = ({movieInfo}) => {
 
 
     return (
-        <div>
+        <div className={css.main} style={{backgroundImage: `url('https://image.tmdb.org/t/p/w500/${backdrop_path}')`}}>
             <button onClick={()=>navigate(-1)}>back</button>
-            <div className={css.MovieInfoMain}>
+            <div className={css.MovieInfoMain} >
                 <div onClick={()=>navigate(`/${title}/poster` , {state: {poster_path}})}>
                     <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title}/>
                 </div>

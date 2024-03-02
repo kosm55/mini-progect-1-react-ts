@@ -24,6 +24,20 @@
     background: black;
     color: snow;
 }
+.login{
+    display: flex;
+    align-items: center;
+}
+.login img{
+    height: 30px;
+    width: 30px;
+}
+.login a{
+    font-size: 18px;
+}
+.addBlockOfbutt{
+    display: flex;
+}
 /*----dark-------*/
 .HeaderDark{
     display: flex;

@@ -2,6 +2,7 @@ import {FC, PropsWithChildren, useState} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
 
 import css from "./SearchMovieForm.module.css"
+import {useNavigate} from "react-router-dom";
 
 interface IProps extends PropsWithChildren {
     searchTitle: (title: string) => void
@@ -10,10 +11,7 @@ interface IProps extends PropsWithChildren {
 const SearchMovieForm: FC<IProps> = ({searchTitle}) => {
     const {reset,handleSubmit,register} = useForm();
 
-
-
     const search: SubmitHandler<any> =(data)=>{
-        console.log(data.title)
         searchTitle(data.title)
         reset()
     }

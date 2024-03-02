@@ -3,6 +3,7 @@ import {FC, PropsWithChildren, useContext,  useState} from "react";
 import {GenreBadge, MoviesList, SearchMovieForm} from "../components";
 import {DarkModeContext, GenreContext} from "../hoc/ContextProvider";
 import css from "./MoviesPage.module.css"
+import {usePageQuery} from "../hooks";
 
 
 interface IProps extends PropsWithChildren {
@@ -19,9 +20,7 @@ const MoviesPage:FC <IProps> = () => {
         setSearchMovie(title)
     }
 
-    if (!darkModeContext) {
-        return null;
-    }
+
     const { darkMode, setDarkMode } = darkModeContext;
 
     return (
