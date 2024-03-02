@@ -8,9 +8,6 @@ import {GenreBadge} from "../GenreContainer";
 import {IGenre} from "../../interfaces";
 import {GenreContext} from "../../hoc/ContextProvider";
 
-
-
-
 interface IProps extends PropsWithChildren {
     movieInfo: IMovie,
 
