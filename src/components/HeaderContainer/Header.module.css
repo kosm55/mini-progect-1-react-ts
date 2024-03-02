@@ -13,16 +13,30 @@
     margin: 0 5px;
 }
 .Header a[class='active'] {
-    color: snow;
+    color: #ab1212;
 }
 .Header a:hover{
-    color: snow;
+    color: #1d47a4;
 }
 .btn{
     border-radius: 50px;
     border: 2px solid black;
     background: black;
     color: snow;
+}
+.login{
+    display: flex;
+    align-items: center;
+}
+.login img{
+    height: 30px;
+    width: 30px;
+}
+.login a{
+    font-size: 18px;
+}
+.addBlockOfbutt{
+    display: flex;
 }
 /*----dark-------*/
 .HeaderDark{
@@ -42,7 +56,7 @@
     color: #c21717;
 }
 .HeaderDark a:hover{
-    color: #bd1818;
+    color: #1d47a4;
 }
 .btnDark{
     border-radius: 50px;

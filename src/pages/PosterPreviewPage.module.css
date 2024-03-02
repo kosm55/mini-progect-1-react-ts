@@ -1,0 +1,28 @@
+.PosterWhite{
+    display: flex;
+    background: #8accf5;
+}
+.PosterWhite img{
+    width: 500px;
+    height: 750px;
+    margin-left: 25%;
+
+}
+.PosterWhite button{
+    margin-left: 20px;
+}
+
+.PosterDark{
+    display: flex;
+    background: black;
+}
+.PosterDark img{
+    width: 500px;
+    height: 750px;
+    margin-left: 25%;
+
+}
+.PosterDark button{
+    margin-left: 20px;
+    color: black;
+}

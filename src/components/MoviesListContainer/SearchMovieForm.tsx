@@ -1,4 +1,4 @@
-import {FC, PropsWithChildren, useState} from 'react';
+import {FC, PropsWithChildren} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
 
 import css from "./SearchMovieForm.module.css"
@@ -10,10 +10,7 @@ interface IProps extends PropsWithChildren {
 const SearchMovieForm: FC<IProps> = ({searchTitle}) => {
     const {reset,handleSubmit,register} = useForm();
 
-
-
     const search: SubmitHandler<any> =(data)=>{
-        console.log(data.title)
         searchTitle(data.title)
         reset()
     }

@@ -1,71 +1,55 @@
 import {FC, useEffect, useState} from 'react';
-import {useSearchParams} from "react-router-dom";
+import {useParams, useSearchParams} from "react-router-dom";
 
 import {IMovie} from "../../interfaces";
 import {movieService} from "../../services";
 import {MoviesListCard} from "./MoviesListCard";
 import css from "./MoviesList.module.css"
-
-
+import {usePageQuery} from "../../hooks";
 
 interface IProps {
-
     searchMovie: string
 }
 
 const MoviesList: FC<IProps> = ({searchMovie}) => {
-    // const [movies, setMovies] = useState<IProps>({results: []})
     const [movies, setMovies] = useState<IMovie[]>([])
-    const [query, setQuery] = useSearchParams({page: '1'});
-
-        const [querySearch, setQuerySearch] = useSearchParams({page: '1'});
-
-    const [currentPage, setCurrentPage] = useState<number>(1)
-
-
-    const page= query.get('page')
-
-    useEffect(() => {
-        if (page !=null)
-        movieService.getAll(page).then(({data}) => {
-            const filteredMovies = data.results.filter(movie => movie.title.toLowerCase().includes(searchMovie.toLowerCase()));
-            // setMovies(data.results)
-            setMovies(filteredMovies);
-            setCurrentPage(+page)
-        })
-    }, [query, searchMovie]);
+    const [query, setQuery] = useSearchParams()
+    const {id} = useParams()
+    const with_genres = query.get('with_genres')
+    const withTitle = query.get('query')
+    const {page, nextPage, prevPage, currentPage }=usePageQuery()
 
 
-   const nextPage = () => setQuery(prevState => {
-       const nextPage = (+prevState.get('page') + 1).toString();
-       setCurrentPage(+nextPage);
-       prevState.set('page', nextPage);
-       return prevState;
-   });
 
-   const prevPage = () => setQuery(prevState => {
-       const prevPage = (+prevState.get('page') - 1).toString();
-       setCurrentPage(+prevPage);
-       prevState.set('page', prevPage);
-       return prevState;
-   });
+        useEffect(() => {
+            if (id) {
+                movieService.getAllWithGenre(page, id).then(({data})=> {
+                    setMovies(data.results);
+                    setQuery({ id, page })
+                })
+            }else if (searchMovie) {
+                movieService.getAllWithTitle(page, searchMovie).then(({data}) => {
+                    setMovies(data.results);
+                    setQuery({searchMovie, page})
+                })
+
+                }else{
+                    movieService.getAll(page).then(({data}) => setMovies(data.results))
+                }
+        }, [id, with_genres, withTitle, searchMovie, page]);
 
 
 
 return (
     <div className={css.MoviesListMain}>
         <div className={css.buttonDiv}>
-
             <button disabled={currentPage === 1} onClick={prevPage}>Prev</button>
-            <div>{currentPage}</div>
-            <button onClick={nextPage}>Next</button>
-
+            <div>{page}</div>
+            <button disabled={currentPage=== 500} onClick={nextPage}>Next</button>
         </div>
         <div className={css.MoviesList}>
-            {movies.map(movie => <MoviesListCard key={movie.id} movie={movie} />)}
+            {movies && movies.map(movie => <MoviesListCard key={movie.id} movie={movie} />)}
         </div>
-
-
     </div>
 );
 }
