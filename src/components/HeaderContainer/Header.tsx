@@ -24,7 +24,7 @@ const Header = () => {
                     <img src={icon} alt="account"/>
                 </div>
                 <button className={darkMode ? css.btnDark : css.btn}
-                        onClick={switchDarkMode}>{darkMode ? 'on' : 'off'}</button>
+                        onClick={switchDarkMode}>{darkMode ? 'off' : 'on'}</button>
             </div>
         </div>
     );
