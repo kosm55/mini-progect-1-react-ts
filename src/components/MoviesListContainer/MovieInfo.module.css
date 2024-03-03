@@ -24,7 +24,6 @@
     box-sizing: border-box;
     cursor: pointer ;
 }
-
 .MovieInfoMain p{
     font-size: 20px;
     font-style: italic;
@@ -32,7 +31,6 @@
     padding: 10%;
     margin-top: 100px;
 }
-
 button{
     width: 80px;
     height: 30px;

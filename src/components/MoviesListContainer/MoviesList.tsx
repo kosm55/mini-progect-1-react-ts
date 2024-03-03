@@ -21,6 +21,7 @@ const MoviesList: FC<IProps> = ({searchMovie}) => {
 
 
 
+
         useEffect(() => {
             if (id) {
                 movieService.getAllWithGenre(page, id).then(({data})=> {
@@ -32,10 +33,9 @@ const MoviesList: FC<IProps> = ({searchMovie}) => {
                     setMovies(data.results);
                     setQuery({searchMovie, page})
                 })
-
-                }else{
-                    movieService.getAll(page).then(({data}) => setMovies(data.results))
-                }
+            }else{
+                movieService.getAll(page).then(({data}) => setMovies(data.results))
+            }
         }, [id, with_genres, withTitle, searchMovie, page]);
 
 
@@ -44,7 +44,7 @@ return (
     <div className={css.MoviesListMain}>
         <div className={css.buttonDiv}>
             <button disabled={currentPage === 1} onClick={prevPage}>Prev</button>
-            <div>{page}</div>
+            <div className={css.currentPage}>{page}</div>
             <button disabled={currentPage=== 500} onClick={nextPage}>Next</button>
         </div>
         <div className={css.MoviesList}>

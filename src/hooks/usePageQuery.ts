@@ -1,7 +1,14 @@
 import {useSearchParams} from "react-router-dom";
 import {useState} from "react";
 
-const usePageQuery = () => {
+interface IProps{
+    page: string;
+    currentPage: number;
+    nextPage: () => void;
+    prevPage: () => void;
+}
+
+const usePageQuery = (): IProps => {
     const [query, setQuery] = useSearchParams();
     const [currentPage, setCurrentPage] = useState<number>(1)
     const page=query.get('page')|| '1'

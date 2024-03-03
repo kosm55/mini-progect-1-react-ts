@@ -2,7 +2,6 @@ import {FC, PropsWithChildren} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
 
 import css from "./SearchMovieForm.module.css"
-
 interface IProps extends PropsWithChildren {
     searchTitle: (title: string) => void
 }

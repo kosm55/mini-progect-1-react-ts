@@ -4,8 +4,6 @@ const movies='/discover/movie'
 const genres='/genre/movie/list'
 const search= '/search/movie'
 
-
-
 const urls={
     movies: {
         base: movies,

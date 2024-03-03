@@ -4,8 +4,6 @@ import {GenreBadge, MoviesList, SearchMovieForm} from "../components";
 import {DarkModeContext, GenreContext} from "../hoc/ContextProvider";
 import css from "./MoviesPage.module.css"
 
-
-
 interface IProps extends PropsWithChildren {
 
 }
@@ -15,7 +13,7 @@ const MoviesPage:FC <IProps> = () => {
     const darkModeContext = useContext(DarkModeContext);
     const genres = useContext(GenreContext)
 
-    const searchTitle  = (title: string)=> {
+    const searchTitle  = (title: string): void => {
         setSearchMovie(title)
     }
 

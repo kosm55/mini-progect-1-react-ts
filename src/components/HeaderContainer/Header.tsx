@@ -10,7 +10,7 @@ const Header = () => {
     const darkModeContext = useContext(DarkModeContext);
     const { darkMode, setDarkMode } = darkModeContext;
 
-    const switchDarkMode= ()=>{
+    const switchDarkMode= ():void =>{
         setDarkMode(prevMode=> !prevMode)
     }
 

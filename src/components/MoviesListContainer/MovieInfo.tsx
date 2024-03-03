@@ -1,5 +1,5 @@
 import React, {FC, PropsWithChildren, useContext} from 'react';
-import {useNavigate, useParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 import {IMovie} from "../../interfaces";
 import {Stars} from "../StarsRatingContainer";
@@ -9,16 +9,13 @@ import {IGenre} from "../../interfaces";
 import {GenreContext} from "../../hoc/ContextProvider";
 
 interface IProps extends PropsWithChildren {
-    movieInfo: IMovie,
-
+    movieInfo: IMovie
 }
 
 const MovieInfo: FC<IProps> = ({movieInfo}) => {
     const {genre_ids, backdrop_path, poster_path,  original_title, title , overview, release_date, vote_count, vote_average} = movieInfo;
     const navigate = useNavigate();
     const genresContext = useContext(GenreContext);
-    const {id} = useParams();
-
 
 
     const showGenreOfMovie = (genres: IGenre[], genre_ids: number[]): React.ReactNode[] => {
@@ -42,13 +39,10 @@ const MovieInfo: FC<IProps> = ({movieInfo}) => {
                     <h4>({original_title})</h4>
                     <Stars vote_average={vote_average}/>
                     <div>rating from users: {vote_average} ({vote_count} voices)</div>
-
                     <p>{overview}</p>
                 </div>
-
             </div>
         </div>
-
     );
 };
 

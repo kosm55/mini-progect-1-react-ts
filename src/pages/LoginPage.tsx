@@ -10,7 +10,10 @@ const LoginPage: FC<IProps> = () => {
     return (
         <div>
             <button onClick={()=>navigate(-1)}>back</button>
-            LoginPage
+            <hr/>
+            <div>
+                here can be form for authorization
+            </div>
         </div>
     );
 };
