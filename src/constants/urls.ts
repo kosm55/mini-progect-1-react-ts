@@ -1,17 +1,17 @@
-const baseURL='https://api.themoviedb.org/3'
+const baseURL = 'https://api.themoviedb.org/3'
 
-const movies='/discover/movie'
-const genres='/genre/movie/list'
-const search= '/search/movie'
+const movies = '/discover/movie'
+const genres = '/genre/movie/list'
+const search = '/search/movie'
 
-const urls={
+const urls = {
     movies: {
         base: movies,
-        byId: (movie_id:number):string=> `/movie/${movie_id}`
+        byId: (movie_id: number): string => `/movie/${movie_id}`
     },
     genres: {
         base: genres,
-        byId: (genre_id: number):string=> `/genre/${genre_id}`
+        byId: (genre_id: number): string => `/genre/${genre_id}`
     },
     search: {
         base: search

@@ -13,11 +13,11 @@ const PosterPreviewPage: FC<IProps> = () => {
     const {state} = useAppLocation<{ poster_path: string }>();
     const navigate = useNavigate();
     const darkModeContext = useContext(DarkModeContext);
-    const { darkMode } = darkModeContext;
+    const {darkMode} = darkModeContext;
 
     return (
-        <div className={darkMode? css.PosterDark : css.PosterWhite}>
-            <button onClick={()=> navigate(-1)}>back</button>
+        <div className={darkMode ? css.PosterDark : css.PosterWhite }>
+            <button onClick={() => navigate(-1)}>back</button>
             <img src={`https://image.tmdb.org/t/p/w500${state?.poster_path}`} alt='PosterPreview'/>
         </div>
     );

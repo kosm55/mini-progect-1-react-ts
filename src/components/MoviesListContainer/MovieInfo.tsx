@@ -13,7 +13,17 @@ interface IProps extends PropsWithChildren {
 }
 
 const MovieInfo: FC<IProps> = ({movieInfo}) => {
-    const {genre_ids, backdrop_path, poster_path,  original_title, title , overview, release_date, vote_count, vote_average} = movieInfo;
+    const {
+        genre_ids,
+        backdrop_path,
+        poster_path,
+        original_title,
+        title,
+        overview,
+        release_date,
+        vote_count,
+        vote_average
+    } = movieInfo;
     const navigate = useNavigate();
     const genresContext = useContext(GenreContext);
 
@@ -21,16 +31,16 @@ const MovieInfo: FC<IProps> = ({movieInfo}) => {
     const showGenreOfMovie = (genres: IGenre[], genre_ids: number[]): React.ReactNode[] => {
         return genre_ids.map((id_genre: number) => {
             const genre = genres.find(item => item.id === id_genre);
-            return <GenreBadge key={genre.id} genre={genre} />;
+            return <GenreBadge key={genre.id} genre={genre}/>;
         });
     };
 
 
     return (
         <div className={css.main} style={{backgroundImage: `url('https://image.tmdb.org/t/p/w500/${backdrop_path}')`}}>
-            <button onClick={()=>navigate(-1)}>back</button>
-            <div className={css.MovieInfoMain} >
-                <div onClick={()=>navigate(`/${title}/poster` , {state: {poster_path}})}>
+            <button onClick={() => navigate(-1)}>back</button>
+            <div className={css.MovieInfoMain}>
+                <div onClick={() => navigate(`/${title}/poster`, {state: {poster_path}})}>
                     <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title}/>
                 </div>
                 <div className={css.GenreBadge}>{showGenreOfMovie(genresContext, genre_ids)}</div>

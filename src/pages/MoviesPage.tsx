@@ -1,4 +1,4 @@
-import {FC, PropsWithChildren, useContext,  useState} from "react";
+import {FC, PropsWithChildren, useContext, useState} from "react";
 
 import {GenreBadge, MoviesList, SearchMovieForm} from "../components";
 import {DarkModeContext, GenreContext} from "../hoc/ContextProvider";
@@ -8,25 +8,25 @@ interface IProps extends PropsWithChildren {
 
 }
 
-const MoviesPage:FC <IProps> = () => {
+const MoviesPage: FC<IProps> = () => {
     const [searchMovie, setSearchMovie] = useState<string>('')
     const darkModeContext = useContext(DarkModeContext);
     const genres = useContext(GenreContext)
 
-    const searchTitle  = (title: string): void => {
+    const searchTitle = (title: string): void => {
         setSearchMovie(title)
     }
 
 
-    const { darkMode,  } = darkModeContext;
+    const {darkMode,} = darkModeContext;
 
     return (
-        <div className={darkMode? css.darkPage: css.whitePage}>
+        <div className={darkMode ? css.darkPage : css.whitePage}>
             <SearchMovieForm searchTitle={searchTitle}/>
             <div className={css.Genres}>
-                {genres.map(genre=> <GenreBadge key={genre.id} genre={genre}/>)}
+                {genres.map(genre => <GenreBadge key={genre.id} genre={genre}/>)}
             </div>
-            <MoviesList searchMovie={searchMovie} />
+            <MoviesList searchMovie={searchMovie}/>
         </div>
     );
 };

@@ -9,7 +9,7 @@ const LoginPage: FC<IProps> = () => {
     const navigate = useNavigate();
     return (
         <div>
-            <button onClick={()=>navigate(-1)}>back</button>
+            <button onClick={() => navigate(-1)}>back</button>
             <hr/>
             <div>
                 here can be form for authorization

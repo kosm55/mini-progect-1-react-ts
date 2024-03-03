@@ -8,17 +8,18 @@ interface IProps {
     darkMode: boolean,
     setDarkMode: ISetState<boolean>
 }
-const DarkModeContext=createContext<IProps>(null)
-const GenreContext=createContext<IGenre[]>([])
+
+const DarkModeContext = createContext<IProps>(null)
+const GenreContext = createContext<IGenre[]>([])
 
 
 const ContextProvider: FC<PropsWithChildren<{}>> = ({children}) => {
     const [darkMode, setDarkMode] = useState<boolean>(false)
-    const [genres, setGenres] = useState<IGenre[]>( [])
+    const [genres, setGenres] = useState<IGenre[]>([])
 
 
     useEffect(() => {
-        genreService.getAll().then(({data})=> setGenres(data.genres))
+        genreService.getAll().then(({data}) => setGenres(data.genres))
     }, []);
 
     return (

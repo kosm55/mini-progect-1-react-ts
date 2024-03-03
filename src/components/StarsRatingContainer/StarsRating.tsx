@@ -4,7 +4,8 @@ import StarRating from 'react-star-ratings';
 interface IProps {
     vote_average: number
 }
-const Stars: FC<IProps> = ({ vote_average }) => {
+
+const Stars: FC<IProps> = ({vote_average}) => {
     return (
         <div>
             <StarRating

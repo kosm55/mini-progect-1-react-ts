@@ -11,23 +11,23 @@ interface IProps extends PropsWithChildren {
 }
 
 const MovieInfoPage: FC<IProps> = () => {
-    const {state} = useAppLocation<{ movie: IMovie}>();
+    const {state} = useAppLocation<{ movie: IMovie }>();
     const {id} = useParams();
-    const [movieInfo, setMovieInfo] = useState<IMovie|undefined>()
+    const [movieInfo, setMovieInfo] = useState<IMovie | undefined>()
 
     useEffect(() => {
-        if (state?.movie){
+        if (state?.movie) {
             setMovieInfo(state.movie)
-        }else {
-            if (id){
-                movieService.getById(+id).then(({data})=> setMovieInfo(data))
+        } else {
+            if (id) {
+                movieService.getById(+id).then(({data}) => setMovieInfo(data))
             }
         }
     }, [id, state]);
 
     return (
         <div>
-            {movieInfo && <MovieInfo movieInfo={movieInfo} />}
+            {movieInfo && <MovieInfo movieInfo={movieInfo}/>}
         </div>
     );
 };
